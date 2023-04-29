@@ -10,8 +10,8 @@ import modals
 import pandas as pd
 
 
-baseURL = 'https://imdb-api.com/en/API'
-apiKey = 'k_9usdv193'
+baseURL = 'https://www.themoviedb.org'
+apiKey = 'a7f7880f24532892580aa6a75eacd687'
 # apiKey = 'k_ua20om6k'
 
 getEmoji = {
