@@ -2,7 +2,7 @@ import streamlit as st
 import streamlit.components.v1 as components
 from textblob import TextBlob
 from PIL import Image
-import text2emotion as te
+#import text2emotion as te
 import plotly.graph_objects as go
 
 def plotPie(labels, values):
@@ -41,7 +41,7 @@ def getSentiments(userText, type):
         col2.metric("Subjectivity", subjectivity, None)
         col3.metric("Result", status, None)
         st.image(image, caption=status)
-    elif(type == 'Happy/Sad/Angry/Fear/Surprise - text2emotion'):
+   ''' elif(type == 'Happy/Sad/Angry/Fear/Surprise - text2emotion'):
         emotion = dict(te.get_emotion(userText))
         col1, col2, col3, col4, col5 = st.columns(5)
         col1.metric("Happy 😊", emotion['Happy'], None)
@@ -49,7 +49,7 @@ def getSentiments(userText, type):
         col3.metric("Angry 😠", emotion['Angry'], None)
         col4.metric("Fear 😨", emotion['Fear'], None)
         col5.metric("Surprise 😲", emotion['Surprise'], None)
-        plotPie(list(emotion.keys()), list(emotion.values()))
+        plotPie(list(emotion.keys()), list(emotion.values())) '''
         
 
 def renderPage():
@@ -63,7 +63,7 @@ def renderPage():
     st.text("")
     #type = st.selectbox(
      'Type of analysis',
-     ('Positive/Negative/Neutral - TextBlob'))
+     ('Positive/Negative/Neutral - TextBlob''))
     st.text("")
     if st.button('Predict'):
         if(userText!="" and type!=None):
