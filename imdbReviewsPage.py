@@ -10,8 +10,8 @@ import modals
 import pandas as pd
 
 
-baseURL = 'https://api.themoviedb.org/3/movie/'
-apiKey = 'a7f7880f24532892580aa6a75eacd687'
+#baseURL = 'https://api.themoviedb.org/3/movie/'
+#apiKey = 'a7f7880f24532892580aa6a75eacd687'
 # apiKey = 'k_ua20om6k'
 
 getEmoji = {
@@ -42,7 +42,7 @@ cacheData = {}
         
 
 def getMovies(movieName):
-    response = requests.get('{baseURL}/SearchMovie/{apiKey}/{movieName}'.format(baseURL=baseURL, apiKey=apiKey, movieName=movieName))
+    response = requests.get('https://api.themoviedb.org/3/movie/%7B%7D?api_key=a7f7880f24532892580aa6a75eacd687&language=en-US%27.format'.format(baseURL=baseURL, apiKey=apiKey, movieName=movieName))
     response = response.json()
     if(isinstance(response["results"], list)):
         movies = [{"id": result['id'], "title": result['title'], "image": result["image"], "description": result["description"]} for result in response["results"]]
