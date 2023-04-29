@@ -10,7 +10,7 @@ import modals
 import pandas as pd
 
 
-baseURL = 'https://www.themoviedb.org'
+baseURL = 'https://api.themoviedb.org/3/movie/'
 apiKey = 'a7f7880f24532892580aa6a75eacd687'
 # apiKey = 'k_ua20om6k'
 
