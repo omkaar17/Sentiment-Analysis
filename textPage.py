@@ -61,10 +61,9 @@ def renderPage():
     st.text("")
     userText = st.text_input('User Input', placeholder='Input text HERE')
     st.text("")
-#     type = st.selectbox(
-#      'Type of analysis',
-#      ('Positive/Negative/Neutral - TextBlob','Happy/Sad/Angry/Fear/Surprise - textgfh2emotion'))
-#     st.text("")
+     type = st.selectbox(
+      'Type of analysis')
+     st.text("")
     if st.button('Predict'):
         if(userText!="" and type!=None):
             st.text("")
