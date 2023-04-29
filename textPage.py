@@ -34,23 +34,22 @@ def getSentiments(userText, type):
             image = Image.open('./images/positive.PNG')
         elif(status == "Negative"):
             image = Image.open('./images/negative.PNG')
-            
-        elif(type == 'Happy/Sad/Angry/Fear/Surprise - text2emotion'):
-            emotion = dict(te.get_emotion(userText))
-            col1, col2, col3, col4, col5 = st.columns(5)
-            col1.metric("Happy 😊", emotion['Happy'], None)
-            col2.metric("Sad 😔", emotion['Sad'], None)
-            col3.metric("Angry 😠", emotion['Angry'], None)
-            col4.metric("Fear 😨", emotion['Fear'], None)
-            col5.metric("Surprise 😲", emotion['Surprise'], None)
-            plotPie(list(emotion.keys()), list(emotion.values()))
         else:
             image = Image.open('./images/neutral.PNG')
-            col1, col2, col3 = st.columns(3)
-            col1.metric("Polarity", polarity, None)
-            col2.metric("Subjectivity", subjectivity, None)
-            col3.metric("Result", status, None)
-            st.image(image, caption=status)
+        col1, col2, col3 = st.columns(3)
+        col1.metric("Polarity", polarity, None)
+        col2.metric("Subjectivity", subjectivity, None)
+        col3.metric("Result", status, None)
+        st.image(image, caption=status)
+    elif(type == 'Happy/Sad/Angry/Fear/Surprise - text2emotion'):
+        emotion = dict(te.get_emotion(userText))
+        col1, col2, col3, col4, col5 = st.columns(5)
+        col1.metric("Happy 😊", emotion['Happy'], None)
+        col2.metric("Sad 😔", emotion['Sad'], None)
+        col3.metric("Angry 😠", emotion['Angry'], None)
+        col4.metric("Fear 😨", emotion['Fear'], None)
+        col5.metric("Surprise 😲", emotion['Surprise'], None)
+        plotPie(list(emotion.keys()), list(emotion.values()))
         
 
 def renderPage():
