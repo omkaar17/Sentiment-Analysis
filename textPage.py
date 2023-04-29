@@ -61,7 +61,7 @@ def renderPage():
     st.text("")
     userText = st.text_input('User Input', placeholder='Input text HERE')
     st.text("")
-    #type = st.selectbox(
+    type = st.selectbox(
      'Type of analysis',
      ('Positive/Negative/Neutral - TextBlob','Happy/Sad/Angry/Fear/Surprise - text2emotion'))
     st.text("")
